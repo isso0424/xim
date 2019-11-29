@@ -93,7 +93,7 @@ class ProxiesJSONFile(DataFile):
 
     def dump(self, proxies):
         with open(self.file_path, "w") as f:
-            return f.write(json.dumps(proxies.proxies))
+            return f.write(json.dumps(proxies.proxies, indent=2))
 
 
 class ConfigJSONFile(DataFile):
@@ -110,7 +110,7 @@ class ConfigJSONFile(DataFile):
 
     def dump(self, config):
         with open(self.file_path, "w") as f:
-            return f.write(json.dumps(config.config))
+            return f.write(json.dumps(config.config, indent=2))
 
 
 class Config:
@@ -268,7 +268,7 @@ class XimShell:
     def set(self, *shell_names):
         """
 
-        :param shell_names: Tuple<string>
+        :param shell_names: Any
         :return: void
         """
         if type(shell_names[0]) == tuple:
@@ -281,7 +281,7 @@ class XimShell:
     def unset(self, *shell_names):
         """
 
-        :param shell_name: string
+        :param shell_names: Any
         :return: void
         """
         if type(shell_names[0]) == tuple:
@@ -307,7 +307,7 @@ class XimShell:
             show shells status.
         xim shell help
             show help
-        ! caution !
+        
         git shell is set in --global.
         """))
 
