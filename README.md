@@ -5,7 +5,9 @@ Overview
 
 プロキシをいちいち設定するのが面倒なので私用に作りました。<br>
 名前をつけたプロキシのデータを作成して、名前ごとに設定、管理するCLIです。<br>
-動作環境: Windows
+動作環境: Windows<br>
+対応: HTTP_PROXY, pip, git, npm<br>
+（ユーザーが自作して追加することもできます。後述）
 
 Requirement
 ---
